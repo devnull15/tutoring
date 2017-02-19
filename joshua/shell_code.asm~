@@ -2,7 +2,7 @@ segment .text
     global _start
 
 _start:
-    jmp call_shellcode
+    jmp shellcode
 
 shellcode:
 

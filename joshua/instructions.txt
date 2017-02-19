@@ -1,0 +1,10 @@
+1) Assemble and Link:
+   * nasm -f elf64 shell_code.asm
+   * ld shell_code.o -o shell_code.o
+   * verify shellcode works using gdb
+2) get hex from exploit binary
+   * objdump -d 2exploit
+   * copy and paste to text doc
+   * remove everything except hex
+   * OR use hexify.sh and binify.sh
+3) Testing with C??
