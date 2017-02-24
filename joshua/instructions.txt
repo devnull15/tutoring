@@ -8,3 +8,7 @@
    * remove everything except hex
    * OR use hexify.sh and binify.sh
 3) Testing with C??
+   * turn off canaries:
+   ** echo 0 > /proc/sys/kernel/randomize_va_space
+   * compile without stack protection
+   ** gcc overflow.c -o overflow -fno-stack-proctector -z execstack
