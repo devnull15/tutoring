@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+/* Variables */
+double D = 18.69;
+double A = 4.01814;
+double B = 1203.835;
+double C = -53.226;
+double H = 33.9; // ?
+double R = 0.0083174621; // ?
+
+
+double c() {
+  
+
+}
+
+double toK(double c) {
+  return c+273.15;
+}
+
+int main()
+{
+
+  /* Get Input */
+  char input[10] = "";
+  printf("Enter temperature in degrees C: ");
+  scanf("%s", input);
+  printf("You entered: %s\n", input);
+
+  /* Convert to K */
+  double T = toK(input);
+  
+
+  
+  return 0;
+}
